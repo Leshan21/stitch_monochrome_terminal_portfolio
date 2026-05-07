@@ -89,7 +89,7 @@ export default function ProjectsPage() {
         {/* Stats Section */}
         <section className="border border-dim border-dashed p-6 space-y-4">
           <h2 className="font-headline-lg text-headline-lg text-dim">
-            /* PROJECT_STATS */
+            {"/* PROJECT_STATS */"}
           </h2>
           <div className="grid grid-cols-3 gap-4">
             <div className="flex flex-col gap-2">

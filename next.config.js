@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   poweredByHeader: false,
   compress: true,
-  optimizeFonts: true,
   productionBrowserSourceMaps: false,
+  outputFileTracingRoot: __dirname,
   images: {
-    unoptimized: true, // Helpful for static export if needed
+    unoptimized: true,
   },
 };
 

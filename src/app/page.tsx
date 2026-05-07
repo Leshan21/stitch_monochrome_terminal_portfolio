@@ -103,7 +103,7 @@ export default function Home() {
         {/* Stack Section */}
         <section className="space-y-md">
           <h2 className="font-headline-lg text-headline-lg text-dim">
-            /* TECH_STACK */
+            {"/* TECH_STACK */"}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {techStack.map((tech) => (
@@ -125,7 +125,7 @@ export default function Home() {
         {/* Projects Section */}
         <section className="space-y-md">
           <h2 className="font-headline-lg text-headline-lg text-dim">
-            /* RECENT_COMMITS */
+            {"/* RECENT_COMMITS */"}
           </h2>
           <div className="border border-white overflow-x-auto">
             <table className="w-full text-left border-collapse">
@@ -178,7 +178,7 @@ export default function Home() {
         {/* Contact Section */}
         <section className="space-y-md">
           <h2 className="font-headline-lg text-headline-lg text-dim">
-            /* ESTABLISH_CONNECTION */
+            {"/* ESTABLISH_CONNECTION */"}
           </h2>
           <form className="border border-white p-6 flex flex-col gap-6">
             <div className="flex flex-col gap-2">

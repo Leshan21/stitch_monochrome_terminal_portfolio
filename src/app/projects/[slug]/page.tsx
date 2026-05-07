@@ -3,9 +3,9 @@ import { getProjectBySlug, projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 
 interface ProjectDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectDetailPageProps) {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -29,8 +30,11 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
   };
 }
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectDetailPage({
+  params,
+}: ProjectDetailPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -56,7 +60,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         <section className="border border-primary bg-surface-container-lowest">
           <div className="border-b border-primary p-xs flex justify-between items-center bg-surface-container-highest">
             <span className="font-label-xs text-label-xs text-on-surface-variant">
-              ~/projects/{project.slug}
+              ~/projects/{slug}
             </span>
             <span
               className={`font-label-xs text-label-xs px-2 py-1 border ${
