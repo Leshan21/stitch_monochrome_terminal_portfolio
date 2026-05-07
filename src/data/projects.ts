@@ -176,12 +176,7 @@ export const projects: Project[] = [
     title: "n8n Workflow Automation",
     description:
       "Complete workflow automation solution using n8n for seamless integration across multiple platforms and services.",
-    longDescription: `A production-ready automation platform built with n8n for enterprise workflow automation.
-      Connects disparate systems and automates repetitive tasks across the organization.
-      Includes pre-built workflows for common business processes like email handling, data sync, and notifications.
-      Features advanced error handling, retry logic, and detailed audit trails.
-      Easily customizable through n8n's visual workflow builder, no coding required.
-      Supports both on-premise and cloud deployment options.`,
+    longDescription: `I built a fully automated workflow that generates AI images and posts them directly to Facebook without manual work.`,
     status: "STABLE",
     tags: ["n8n", "workflow", "automation"],
     technologies: [

@@ -1,0 +1,13 @@
+{
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "devCommand": "next dev",
+  "framework": "nextjs",
+  "regions": ["auto"],
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  },
+  "env": ["NEXT_PUBLIC_API_URL"]
+}
