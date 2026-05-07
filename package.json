@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@types/node": "^20.17.6",
     "next": "^15.1.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
