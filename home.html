@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terminal Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Blinking cursor effect */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "outline-variant": "#444748",
+                        "on-surface-variant": "#c4c7c8",
+                        "bg": "#000000",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#2f3131",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#303031",
+                        "on-tertiary": "#2f3131",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-surface": "#e5e2e1",
+                        "dim": "#666666",
+                        "surface-container-highest": "#353434",
+                        "on-primary-fixed-variant": "#454747",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-tint": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "outline": "#8e9192",
+                        "background": "#141313",
+                        "focus": "#ffffff",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#464747",
+                        "on-secondary-container": "#b6b5b5",
+                        "primary": "#ffffff",
+                        "fg": "#ffffff",
+                        "primary-container": "#e2e2e2",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#636565",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#141313",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353434",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#636565",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary": "#c7c6c6",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-dim": "#141313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "1.5rem",
+                        "xs": "0.5rem",
+                        "unit": "4px",
+                        "gutter": "1rem",
+                        "margin": "2rem",
+                        "lg": "2rem",
+                        "sm": "1rem",
+                        "xl": "4rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Courier New, Courier, monospace"],
+                        "body-base": ["Courier New, Courier, monospace"],
+                        "label-xs": ["Courier New, Courier, monospace"],
+                        "body-sm": ["Courier New, Courier, monospace"],
+                        "headline-lg": ["Courier New, Courier, monospace"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["clamp(1.5rem, 4vw, 2.5rem)", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-base": ["1rem", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-xs": ["0.75rem", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-sm": ["0.85rem", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["1.2rem", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg text-fg font-body-base text-body-base min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-black text-white font-['Space_Grotesk'] tracking-tighter text-xs md:text-sm border-b border-white w-full sticky top-0 z-50 flex justify-between items-center h-12 px-6">
+<div class="font-bold text-white text-base tracking-widest uppercase">~/root/portfolio</div>
+<nav class="hidden md:flex gap-4">
+<a class="text-white px-2 py-1 hover:bg-white hover:text-black transition-none cursor-pointer active:invert uppercase" href="#projects">projects</a>
+<a class="text-white px-2 py-1 hover:bg-white hover:text-black transition-none cursor-pointer active:invert uppercase" href="#about">about</a>
+<a class="text-white px-2 py-1 hover:bg-white hover:text-black transition-none cursor-pointer active:invert uppercase" href="#stack">stack</a>
+<a class="text-white px-2 py-1 hover:bg-white hover:text-black transition-none cursor-pointer active:invert uppercase" href="#contact">contact</a>
+</nav>
+<button class="text-white px-2 py-1 border border-white hover:bg-white hover:text-black transition-none cursor-pointer uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+            terminal_access
+        </button>
+</header>
+<main class="flex-grow p-margin max-w-5xl mx-auto w-full flex flex-col gap-xl">
+<!-- Hero Section (Terminal Simulator) -->
+<section class="border border-white p-6 relative" id="about">
+<div class="absolute top-0 left-0 w-full border-b border-white bg-black px-4 py-1 text-label-xs font-label-xs text-dim flex justify-between items-center">
+<span>bash - 80x24</span>
+<div class="flex gap-2">
+<span class="w-3 h-3 border border-dim inline-block"></span>
+<span class="w-3 h-3 border border-dim inline-block"></span>
+<span class="w-3 h-3 border border-dim inline-block"></span>
+</div>
+</div>
+<div class="pt-8 flex flex-col gap-4">
+<div class="flex gap-2">
+<span class="text-dim">guest@system:~$</span>
+<span>whoami</span>
+</div>
+<div class="pl-4 border-l border-dashed border-dim pb-4">
+<h1 class="font-headline-xl text-headline-xl mb-2">FULL STACK DEVELOPER</h1>
+<p class="font-body-base text-body-base text-surface-tint max-w-2xl">Building high-performance systems with brutalist efficiency. Specializing in command-line interfaces, robust backends, and terminal-DNA web applications.</p>
+</div>
+<div class="flex gap-2">
+<span class="text-dim">guest@system:~$</span>
+<span class="cursor-blink bg-white w-2 h-5 inline-block"></span>
+</div>
+</div>
+</section>
+<!-- Stack Section -->
+<section class="flex flex-col gap-6" id="stack">
+<h2 class="font-headline-lg text-headline-lg text-dim">/* TECH_STACK */</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[LANG]</span>
+<span class="font-body-base text-body-base">TypeScript</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[LANG]</span>
+<span class="font-body-base text-body-base">Go</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[LANG]</span>
+<span class="font-body-base text-body-base">Rust</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[FRAMEWORK]</span>
+<span class="font-body-base text-body-base">React</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[DB]</span>
+<span class="font-body-base text-body-base">PostgreSQL</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[DB]</span>
+<span class="font-body-base text-body-base">Redis</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[INFRA]</span>
+<span class="font-body-base text-body-base">Docker</span>
+</div>
+<div class="border border-white p-4 hover:bg-white hover:text-black transition-none cursor-pointer flex flex-col items-center justify-center gap-2">
+<span class="font-label-xs text-label-xs">[INFRA]</span>
+<span class="font-body-base text-body-base">AWS</span>
+</div>
+</div>
+</section>
+<!-- Projects Section (Table) -->
+<section class="flex flex-col gap-6" id="projects">
+<h2 class="font-headline-lg text-headline-lg text-dim">/* RECENT_COMMITS */</h2>
+<div class="border border-white overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white bg-surface-container-lowest">
+<th class="p-4 font-label-xs text-label-xs text-dim uppercase">Repository</th>
+<th class="p-4 font-label-xs text-label-xs text-dim uppercase">Status</th>
+<th class="p-4 font-label-xs text-label-xs text-dim uppercase hidden md:table-cell">Stack</th>
+<th class="p-4 font-label-xs text-label-xs text-dim uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-dashed border-dim hover:bg-white hover:text-black group transition-none">
+<td class="p-4 font-body-base text-body-base">&gt; terminal-ui-lib</td>
+<td class="p-4 font-body-sm text-body-sm text-surface-tint group-hover:text-black">[STABLE]</td>
+<td class="p-4 font-body-sm text-body-sm hidden md:table-cell text-surface-tint group-hover:text-black">TS, React</td>
+<td class="p-4 text-right">
+<a class="inline-block border border-white group-hover:border-black px-2 py-1 text-label-xs font-label-xs uppercase" href="#">View</a>
+</td>
+</tr>
+<tr class="border-b border-dashed border-dim hover:bg-white hover:text-black group transition-none">
+<td class="p-4 font-body-base text-body-base">&gt; go-micro-auth</td>
+<td class="p-4 font-body-sm text-body-sm text-surface-tint group-hover:text-black">[BETA]</td>
+<td class="p-4 font-body-sm text-body-sm hidden md:table-cell text-surface-tint group-hover:text-black">Go, Redis</td>
+<td class="p-4 text-right">
+<a class="inline-block border border-white group-hover:border-black px-2 py-1 text-label-xs font-label-xs uppercase" href="#">View</a>
+</td>
+</tr>
+<tr class="border-b border-dashed border-dim hover:bg-white hover:text-black group transition-none">
+<td class="p-4 font-body-base text-body-base">&gt; rust-cli-tool</td>
+<td class="p-4 font-body-sm text-body-sm text-surface-tint group-hover:text-black">[ALPHA]</td>
+<td class="p-4 font-body-sm text-body-sm hidden md:table-cell text-surface-tint group-hover:text-black">Rust</td>
+<td class="p-4 text-right">
+<a class="inline-block border border-white group-hover:border-black px-2 py-1 text-label-xs font-label-xs uppercase" href="#">View</a>
+</td>
+</tr>
+<tr class="hover:bg-white hover:text-black group transition-none">
+<td class="p-4 font-body-base text-body-base">&gt; legacy-monolith</td>
+<td class="p-4 font-body-sm text-body-sm text-surface-tint group-hover:text-black">[DEPRECATED]</td>
+<td class="p-4 font-body-sm text-body-sm hidden md:table-cell text-surface-tint group-hover:text-black">Node, Mongo</td>
+<td class="p-4 text-right">
+<a class="inline-block border border-white group-hover:border-black px-2 py-1 text-label-xs font-label-xs uppercase" href="#">View</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Contact / Input Section -->
+<section class="flex flex-col gap-6" id="contact">
+<h2 class="font-headline-lg text-headline-lg text-dim">/* ESTABLISH_CONNECTION */</h2>
+<form class="border border-white p-6 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-xs text-label-xs text-dim" for="email">INPUT_EMAIL:</label>
+<div class="flex items-center border border-white px-3 py-2 bg-black focus-within:bg-white focus-within:text-black transition-none group">
+<span class="mr-2 text-dim group-focus-within:text-black">&gt;</span>
+<input class="bg-transparent border-none outline-none w-full font-body-base text-body-base text-white group-focus-within:text-black placeholder-dim focus:ring-0 p-0" id="email" placeholder="user@domain.com_" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-xs text-label-xs text-dim" for="message">PAYLOAD:</label>
+<div class="flex items-start border border-white px-3 py-2 bg-black focus-within:bg-white focus-within:text-black transition-none group">
+<span class="mr-2 mt-1 text-dim group-focus-within:text-black">&gt;</span>
+<textarea class="bg-transparent border-none outline-none w-full font-body-base text-body-base text-white group-focus-within:text-black placeholder-dim focus:ring-0 p-0 resize-none" id="message" placeholder="Enter message body..." rows="4"></textarea>
+</div>
+</div>
+<button class="border border-white py-3 px-6 hover:bg-white hover:text-black transition-none font-label-xs text-label-xs uppercase self-start flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[16px]">send</span>
+                    EXECUTE_SEND
+                </button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black text-white font-['Space_Grotesk'] text-[10px] tracking-widest uppercase border-t border-white w-full flex flex-col md:flex-row justify-between items-center p-6 gap-4">
+<div class="text-white font-mono">SYSTEM_STABLE_V1.0.0</div>
+<div class="flex gap-4">
+<a class="text-white/70 hover:text-white hover:underline transition-none" href="#">github</a>
+<a class="text-white/70 hover:text-white hover:underline transition-none" href="#">linkedin</a>
+<a class="text-white/70 hover:text-white hover:underline transition-none" href="#">source_code</a>
+</div>
+</footer>
+</body></html>
